@@ -22,11 +22,12 @@ TestVerifyMlDsaPreReq (
   )
 {
   mMlDsa87 = MlDsaNew (CRYPTO_NID_ML_DSA_87);
-
+  DEBUG ((DEBUG_ERROR, ",TestVerifyMlDsaPreReq:mMLDsa87 new object: 0x%x", mMlDsa87));
   if (mMlDsa87 == NULL) {
+    DEBUG ((DEBUG_ERROR, ",TestVerifyMlDsaPreReq:mMLDsa87==NULL 0x%x", mMlDsa87));
     return UNIT_TEST_ERROR_TEST_FAILED;
   }
-
+    DEBUG ((DEBUG_ERROR, ",TestVerifyMlDsaPreReq:mMLDsa87 passed %a", (CHAR8*)mMlDsa87));  
   return UNIT_TEST_PASSED;
 }
 

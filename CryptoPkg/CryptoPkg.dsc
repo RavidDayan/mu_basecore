@@ -120,24 +120,6 @@
   CryptoPkg/Library/BaseCryptLibOnProtocolPpi/StandaloneMmCryptLib.inf
 
 
-## MU_CHANGE TCBZ_3799 - can't compile for ARM as it depends on ArmSoftFloatLib
-[Components.IA32, Components.X64, Components.AARCH64]
-  CryptoPkg/Test/UnitTest/Library/BaseCryptLib/BaseCryptLibUnitTestApp.inf {  ## Add unit-test application for the crypto tests.
-    ## MU_CHANGE [START] add library classes to allow crypto tests to run in uefi shell correctly
-    <LibraryClasses>
-      DebugLib|MdePkg/Library/UefiDebugLibDebugPortProtocol/UefiDebugLibDebugPortProtocol.inf # MU_CHANGE add debug lib
-      DebugPrintErrorLevelLib|MdePkg/Library/BaseDebugPrintErrorLevelLib/BaseDebugPrintErrorLevelLib.inf # MU_CHANGE add debug lib
-      UefiRuntimeServicesTableLib|MdePkg/Library/UefiRuntimeServicesTableLib/UefiRuntimeServicesTableLib.inf
-      ReportStatusCodeLib|MdeModulePkg/Library/DxeReportStatusCodeLib/DxeReportStatusCodeLib.inf
-      MemoryAllocationLib|MdePkg/Library/UefiMemoryAllocationLib/UefiMemoryAllocationLib.inf
-    <PcdsFixedAtBuild>
-      gEfiMdePkgTokenSpaceGuid.PcdDebugPrintErrorLevel|0xFFFFFFFF
-      !include CryptoPkg/Test/Crypto.pcd.ALL.inc.dsc
-    ## MU_CHANGE [END]
-  }
-  ## MU_CHANGE [END]
-## MU_CHANGE [END]
-
 [Components.IA32, Components.X64]
   # Build verification of IA32/X64 specific libraries
 [Components.IA32, Components.X64]
