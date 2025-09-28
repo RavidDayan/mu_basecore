@@ -189,3 +189,11 @@
   gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceX509VerifyCertChain              ## CONSUMES  # MU_CHANGE
   gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceX509GetCertFromCertChain         ## CONSUMES  # MU_CHANGE
   gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceX509GetExtendedBasicConstraints  ## CONSUMES  # MU_CHANGE
+
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaNew                         ## CONSUMES  # MU_CHANGE
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaFree                        ## CONSUMES  # MU_CHANGE
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaGenerateKey                 ## CONSUMES  # MU_CHANGE
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSetPublicKey                ## CONSUMES  # MU_CHANGE
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSetPrivateKey               ## CONSUMES  # MU_CHANGE
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSign                        ## CONSUMES  # MU_CHANGE
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaVerify                      ## CONSUMES  # MU_CHANGE

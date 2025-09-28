@@ -292,6 +292,13 @@
   gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceEcGetPublicKeyFromX509|FALSE|BOOLEAN|0xcc
   gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceEcDsaSign|FALSE|BOOLEAN|0xcd
   gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceEcDsaVerify|FALSE|BOOLEAN|0xce
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaNew |FALSE|BOOLEAN|0xcf
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaFree |FALSE|BOOLEAN|0xd0
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaGenerateKey |FALSE|BOOLEAN|0xd1
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSetPublicKey |FALSE|BOOLEAN|0xd2
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSetPrivateKey |FALSE|BOOLEAN|0xd3
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSign |FALSE|BOOLEAN|0xd4
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaVerify |FALSE|BOOLEAN|0xd5
 # AUTOGEN ENDS
 # ****************************************************************************
 # MU_CHANGE [END]
