@@ -15,6 +15,21 @@ GLOBAL_REMOVE_IF_UNREFERENCED CONST CHAR8  MlDsaSignData[] = "OpenSSL ML-DSA Tes
 
 VOID  *mMlDsa87;
 
+/**
+  Prerequisite function for ML-DSA unit tests.
+
+  This function initializes the ML-DSA-87 context object that will be used
+  across all ML-DSA test cases. It creates a new ML-DSA instance with the
+  NIST-standardized ML-DSA-87 parameter set, which provides security level 5.
+  This prerequisite runs before each individual test case to ensure a clean
+  test environment.
+
+  @param[in]  Context  Unit test context (unused).
+
+  @retval  UNIT_TEST_PASSED             ML-DSA context successfully created.
+  @retval  UNIT_TEST_ERROR_TEST_FAILED  Failed to create ML-DSA context.
+
+**/
 UNIT_TEST_STATUS
 EFIAPI
 TestVerifyMlDsaPreReq (
@@ -33,6 +48,17 @@ TestVerifyMlDsaPreReq (
   return Status;
 }
 
+/**
+  Cleanup function for ML-DSA unit tests.
+
+  This function frees the ML-DSA-87 context object after each test case
+  completes. It ensures proper memory cleanup and prevents resource leaks
+  between test executions. This cleanup runs after each individual test
+  case finishes, regardless of test success or failure.
+
+  @param[in]  Context  Unit test context (unused).
+
+**/
 VOID
 EFIAPI
 TestVerifyMlDsaCleanUp (
@@ -45,6 +71,27 @@ TestVerifyMlDsaCleanUp (
   }
 }
 
+/**
+  Unit test for ML-DSA-87 key pair generation.
+
+  This test validates the ML-DSA key generation functionality by:
+  1. Querying required buffer sizes for public and private keys
+  2. Verifying the returned sizes match ML-DSA-87 specifications
+     (2592 bytes for public key, 4032 bytes for private key)
+  3. Allocating appropriate buffers for the keys
+  4. Generating a complete ML-DSA-87 key pair
+  5. Validating the generated key sizes
+
+  The test ensures that the MlDsaGenerateKey function correctly implements
+  the FIPS 204 ML-DSA-87 key generation algorithm and returns properly
+  sized cryptographic key material.
+
+  @param[in]  Context  Unit test context (unused).
+
+  @retval  UNIT_TEST_PASSED             All key generation tests passed.
+  @retval  UNIT_TEST_ERROR_TEST_FAILED  Memory allocation failed.
+
+**/
 UNIT_TEST_STATUS
 EFIAPI
 TestVerifyMlDsaGenerateKey (
@@ -95,6 +142,26 @@ TestVerifyMlDsaGenerateKey (
   return UNIT_TEST_PASSED;
 }
 
+/**
+  Unit test for ML-DSA-87 public key configuration.
+
+  This test validates the ability to set a public key in an ML-DSA context by:
+  1. Generating a valid ML-DSA-87 key pair
+  2. Setting the public key into the ML-DSA context using MlDsaSetPublicKey
+  3. Verifying the operation succeeds with valid parameters
+  4. Testing error handling with NULL context parameter
+  5. Testing error handling with NULL public key buffer
+
+  This function is essential for verification operations where only the
+  public key is available (e.g., signature verification). The test ensures
+  proper parameter validation and successful key loading into the context.
+
+  @param[in]  Context  Unit test context (unused).
+
+  @retval  UNIT_TEST_PASSED             All public key configuration tests passed.
+  @retval  UNIT_TEST_ERROR_TEST_FAILED  Memory allocation failed.
+
+**/
 UNIT_TEST_STATUS
 EFIAPI
 TestVerifyMlDsaSetPublicKey (
@@ -150,6 +217,26 @@ TestVerifyMlDsaSetPublicKey (
   return UNIT_TEST_PASSED;
 }
 
+/**
+  Unit test for ML-DSA-87 private key configuration.
+
+  This test validates the ability to set a private key in an ML-DSA context by:
+  1. Generating a valid ML-DSA-87 key pair
+  2. Setting the private key into the ML-DSA context using MlDsaSetPrivateKey
+  3. Verifying the operation succeeds with valid parameters
+  4. Testing error handling with NULL context parameter
+  5. Testing error handling with NULL private key buffer
+
+  This function is essential for signing operations where the private key
+  must be loaded into the context. The test ensures proper parameter
+  validation and secure handling of the private key material.
+
+  @param[in]  Context  Unit test context (unused).
+
+  @retval  UNIT_TEST_PASSED             All private key configuration tests passed.
+  @retval  UNIT_TEST_ERROR_TEST_FAILED  Memory allocation failed.
+
+**/
 UNIT_TEST_STATUS
 EFIAPI
 TestVerifyMlDsaSetPrivateKey (
@@ -205,6 +292,30 @@ TestVerifyMlDsaSetPrivateKey (
   return UNIT_TEST_PASSED;
 }
 
+/**
+  Unit test for ML-DSA-87 signature generation and verification.
+
+  This test validates the complete ML-DSA signature workflow by:
+  1. Generating a fresh ML-DSA-87 key pair
+  2. Configuring the context with the private key for signing
+  3. Querying the required signature buffer size (4595 bytes for ML-DSA-87)
+  4. Generating a digital signature over test message data
+  5. Configuring the context with the public key for verification
+  6. Verifying the signature is valid for the original message
+  7. Testing that verification fails for a different message (negative test)
+  8. Testing error handling with NULL context parameters
+
+  This end-to-end test ensures the ML-DSA implementation correctly performs
+  the FIPS 204 signature and verification algorithms, providing post-quantum
+  secure digital signatures. The test confirms that signatures can only be
+  verified with the correct message, maintaining cryptographic integrity.
+
+  @param[in]  Context  Unit test context (unused).
+
+  @retval  UNIT_TEST_PASSED             All signature/verification tests passed.
+  @retval  UNIT_TEST_ERROR_TEST_FAILED  Memory allocation failed.
+
+**/
 UNIT_TEST_STATUS
 EFIAPI
 TestVerifyMlDsaSignVerify (
