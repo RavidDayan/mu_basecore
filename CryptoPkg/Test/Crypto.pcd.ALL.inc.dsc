@@ -140,5 +140,13 @@
   gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceTlsGetHostPublicCert|TRUE
   gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceTlsGetHostPrivateKey|TRUE
   gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceTlsGetCertRevocationList|TRUE
+# MLDSA
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaNew                  | TRUE
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaFree                 | TRUE
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaGenerateKey          | TRUE
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSetPublicKey         | TRUE
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSetPrivateKey        | TRUE
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSign                 | TRUE
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaVerify               | TRUE
 # AUTOGEN ENDS
 # ****************************************************************************
