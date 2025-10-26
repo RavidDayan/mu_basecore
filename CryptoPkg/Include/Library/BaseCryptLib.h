@@ -28,6 +28,7 @@ SPDX-License-Identifier: BSD-2-Clause-Patent
 #define CRYPTO_NID_SECP521R1        0x0206
 #define CRYPTO_NID_BRAINPOOLP512R1  0x03A5
 
+
 // Symmetric ciphers usable with Pkcs7Encrypt.
 #define CRYPTO_NID_AES128CBC  0x01A3 // NID_aes_128_cbc
 #define CRYPTO_NID_AES192CBC  0x01A7 // NID_aes_192_cbc
@@ -89,6 +90,11 @@ typedef enum {
   RsaKeyDq,     ///< q's CRT exponent (== d mod (q - 1))
   RsaKeyQInv    ///< The CRT coefficient (== 1/q mod p)
 } RSA_KEY_TAG;
+
+// Post-Quantum Cryptography - ML-DSA (uses OpenSSL NID values)
+#define CRYPTO_NID_ML_DSA_44        1457
+#define CRYPTO_NID_ML_DSA_65        1458
+#define CRYPTO_NID_ML_DSA_87        1459
 
 // =====================================================================================
 //    One-Way Cryptographic Hash Primitives
