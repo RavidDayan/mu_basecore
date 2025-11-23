@@ -270,13 +270,13 @@
   gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceEcDsaSign|FALSE|BOOLEAN|0xcd
   gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceEcDsaVerify|FALSE|BOOLEAN|0xce
   gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServicePkcs7Encrypt|FALSE|BOOLEAN|0xcf
-  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaNew |FALSE|BOOLEAN|0xcf
-  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaFree |FALSE|BOOLEAN|0xd0
-  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaGenerateKey |FALSE|BOOLEAN|0xd1
-  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSetPublicKey |FALSE|BOOLEAN|0xd2
-  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSetPrivateKey |FALSE|BOOLEAN|0xd3
-  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSign |FALSE|BOOLEAN|0xd4
-  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaVerify |FALSE|BOOLEAN|0xd5
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaNew |FALSE|BOOLEAN|0xd0
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaFree |FALSE|BOOLEAN|0xd1
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaGenerateKey |FALSE|BOOLEAN|0xd2
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSetPublicKey |FALSE|BOOLEAN|0xd3
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSetPrivateKey |FALSE|BOOLEAN|0xd4
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaSign |FALSE|BOOLEAN|0xd5
+  gEfiCryptoPkgTokenSpaceGuid.PcdCryptoServiceMlDsaVerify |FALSE|BOOLEAN|0xd6
 # AUTOGEN ENDS
 # ****************************************************************************
 # MU_CHANGE [END]
